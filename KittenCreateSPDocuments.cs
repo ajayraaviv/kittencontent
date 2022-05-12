@@ -37,9 +37,9 @@ namespace Kitten.DocService
 
 
             // connect to sp and create a new document - this is very very very bad
-            string spurl = "https://m365x31030766.sharepoint.com/sites/KittenSolutions";
-            string spuid = "admin@M365x31030766.onmicrosoft.com";
-            string sppwd = "6f6KgbwmGY";
+            string spurl = "https://m365x31030766.sharepoint.com/sites/KittenSolutions";  // sharepoint URL
+            string spuid = "";   // User name
+            string sppwd = "";  // password - bad bad bad
             Web spweb;
 
             var secpwd = new SecureString();

@@ -32,12 +32,12 @@ namespace Kitten.DocService
             log.LogInformation("Sp List Event Data");
             log.LogInformation("Content: " + sprawdata);
 
-            KittenPageParameters kpageparam =  System.Text.Json.JsonSerializer.Deserialize<KittenPageParameters>(sprawdata);
+            KittenPageParameters kpageparam = System.Text.Json.JsonSerializer.Deserialize<KittenPageParameters>(sprawdata);
             string pagefilename = "OfferingPages/" + kpageparam.OfferingTitle + ".aspx";
 
 
             // connect to sp and create a new document - this is very very very bad
-            string spurl = "https://m365x31030766.sharepoint.com/sites/KittenSolutions";  // sharepoint URL
+            string spurl = "";  // sharepoint URL
             string spuid = "";   // User name
             string sppwd = "";  // password - bad bad bad
             Web spweb;
@@ -61,7 +61,7 @@ namespace Kitten.DocService
 
             // got context, now need to create the page
             // create page
-            PnP.Core.Model.SharePoint.IPage page = spweb.LoadClientSidePage("Templates/ServiceOffering.aspx");
+            PnP.Core.Model.SharePoint.IPage page = spweb.LoadClientSidePage("Templates/ServiceOfferingtemplate.aspx");
 
             // loop through the controls and pop in the data
             foreach (var cvsctl in page.Controls)
@@ -75,31 +75,55 @@ namespace Kitten.DocService
                     // clitxt.Text = "Some Values and Some Kittens for Happy times";
                     // cvsctl.Text = "Some Values and Kittens here";
 
-                    switch(clitxt.Text)
+                    switch (clitxt.Text)
                     {
-                        case "OfferingSubHeading":
-                            log.LogInformation("OfferingSubHeading");
-                            clitxt.Text = kpageparam.OfferingSubHeading;
+                        case "Solution description":
+                            log.LogInformation("Solution description");
+                            clitxt.Text = kpageparam.OfferingSolutionDescription;
                             break;
-                        case "OfferingDescription":
-                            log.LogInformation("OfferingDescription");
-                            clitxt.Text = kpageparam.OfferingDescription;
+                        case "Client Needs":
+                            log.LogInformation("Client Needs");
+                            clitxt.Text = kpageparam.OfferingClientNeeds;
                             break;
-                        case "OfferingContact":
-                            log.LogInformation("OfferingContact");
-                            clitxt.Text = kpageparam.OfferingContact;
+                        case "Addressed Client Issue":
+                            log.LogInformation("Addressed Client Issue");
+                            clitxt.Text = kpageparam.OfferingAddressedClientIssue;
                             break;
-                        case "OfferingAddlInfo":
-                            log.LogInformation("OfferingAddlInfo");
-                            clitxt.Text = kpageparam.OfferingAddlInfo;
+                        case "Business Outcome":
+                            log.LogInformation("Business Outcome");
+                            clitxt.Text = kpageparam.OfferingBusinessOutcome;
                             break;
-                        case "OfferingAssetsURL":
-                            log.LogInformation("OfferingAssetsURL");
-                            clitxt.Text = kpageparam.OfferingAssetsURL;
+                        case "Solution Owner":
+                            log.LogInformation("Solution Owner");
+                            clitxt.Text = kpageparam.OfferingSolutionOwner;
                             break;
-                        case "OfferingContentURL":
-                            log.LogInformation("OfferingContentURL");
-                            clitxt.Text = kpageparam.OfferingContentURL;
+                        case "Function, Service Group, Service Line":
+                            log.LogInformation("Function, Service Group, Service Line");
+                            clitxt.Text = kpageparam.OfferingFunctionServiceGroupServiceLine;
+                            break;
+                        case "Industry, Sector, Segment":
+                            log.LogInformation("Industry, Sector, Segment");
+                            clitxt.Text = kpageparam.OfferingIndustrySectorSegment;
+                            break;
+                        case "field of play":
+                            log.LogInformation("field of play");
+                            clitxt.Text = kpageparam.OfferingFieldOfPlay;
+                            break;
+                        case "9 Levers of Value":
+                            log.LogInformation("9 Levers of Value");
+                            clitxt.Text = kpageparam.Offering9LeversOfValue;
+                            break;
+                        case "phase of delivery":
+                            log.LogInformation("phase of delivery");
+                            clitxt.Text = kpageparam.OfferingPhaseOfDelivery;
+                            break;
+                        case "ESG":
+                            log.LogInformation("ESG");
+                            clitxt.Text = kpageparam.OfferingESG;
+                            break;
+                        case "COVID-19 Relevance":
+                            log.LogInformation("COVID-19 Relevance");
+                            clitxt.Text = kpageparam.OfferingCovid19Relevance;
                             break;
                         default:
                             log.LogInformation("Got something: " + clitxt.Text);

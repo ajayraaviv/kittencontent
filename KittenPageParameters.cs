@@ -9,13 +9,23 @@ namespace Kitten.DocService
     public class KittenPageParameters
     {
         public string OfferingTitle { get; set; }
-        public string OfferingSubHeading { get; set; }
-        public string OfferingDescription  { get; set; }
-        public string OfferingContact { get; set; }
-        public string OfferingAddlInfo { get; set; }
-        public string OfferingAssetsURL { get; set; }
-        public string OfferingContentURL { get; set; }
+        public string OfferingSolutionDescription { get; set; }
+        public string OfferingClientNeeds  { get; set; }
+        public string OfferingAddressedClientIssue { get; set; }
+        public string OfferingBusinessOutcome { get; set; }
+        public string OfferingSolutionOwner { get; set; }
+        public string OfferingFunctionServiceGroupServiceLine { get; set; }
+        public string OfferingIndustrySectorSegment { get; set; }
 
+        public string OfferingFieldOfPlay { get; set; }
+
+        public string Offering9LeversOfValue { get; set; }
+
+        public string OfferingPhaseOfDelivery { get; set; }
+
+        public string OfferingESG { get; set; }
+
+        public string OfferingCovid19Relevance { get; set; }
 
     }
 }

@@ -1,8 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <UserSecretsId>2a3b278c-ba0f-4f85-91b2-52781f9793a8</UserSecretsId>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.0.1" />
     <PackageReference Include="PnP.Core" Version="1.6.0" />
@@ -10,6 +13,7 @@
     <PackageReference Include="PnP.Core.Auth" Version="1.6.0" />
     <PackageReference Include="PnP.Framework" Version="1.9.0" />
   </ItemGroup>
+
   <ItemGroup>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -19,4 +23,5 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+
 </Project>
